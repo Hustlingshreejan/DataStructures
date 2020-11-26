@@ -39,6 +39,15 @@ if __name__ == '__main__':
     a.push(4)
     a.push(3)
     a.push(2)
-    a.push(1)
+    # a.push(1)
+    print(a.display_stack())
+    print(a.top())
+    a.pop()
+    print(a.display_stack())
+    print(a.top())
+    a.push(22)
+    print(a.display_stack())
+    print(a.top())
 
-    print(a.is_empty())
+
+

@@ -1,5 +1,4 @@
-from collections import deque
-
+from queue import Queue
 
 class QueueQueue:
     """
@@ -9,7 +8,7 @@ class QueueQueue:
 
     def __init__(self, queue_size):
         self.size = queue_size
-        self.container = deque()
+        self.container = Queue(maxsize=len(self.size))
         self.queue_front = None
         self.queue_rear = None
 
@@ -17,7 +16,7 @@ class QueueQueue:
         if len(self.container) >= self.size:
             print("Queue overflow")
         else:
-            self.container.append(element)
+            self.container.put(element)
 
         if self.queue_front is None and self.queue_rear is None:
             self.queue_front = self.queue_rear = element
@@ -28,9 +27,9 @@ class QueueQueue:
         if len(self.container) == 0:
             print("Queue underflow")
         else:
-            self.container.popleft()
+            self.container.get()
             if len(self.container) == 0:
-                self.queue_front = self.queue_rear = "momo"
+                self.queue_front = self.queue_rear = None
             else:
                 self.queue_front = self.container[0]
                 self.queue_rear = self.container[-1]
@@ -53,5 +52,4 @@ class QueueQueue:
 
 if __name__ == '__main__':
     a = QueueQueue(5)
-
-
+    a.queue_len()
