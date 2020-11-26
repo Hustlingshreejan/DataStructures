@@ -79,9 +79,27 @@ class Linkedlist:
             iter2 = iter2.next
         print(Llstr)
 
+    def insert_after_value(self, searched_value, new_value):
+        itr6 = self.head
+        while itr6:
+            if itr6.element == searched_value:
+                print(f'The new value {new_value} will be added after the element {searched_value}')
+                new_element = Node(new_value, itr6.next)
+                new_element.next = itr6.next
+                itr6.next = new_element
+                return
+            itr6 = itr6.next
+        else:
+            print("Value not found")
 
 if __name__ == '__main__':
-    print("Name of all methods:\n1:add_beginning.\n2:add_end.\n3:get_length.\n4:remove_element.\n5:add_from_index.\n6:show_linkedlist")
+    print("Name of all methods:\n1:add_beginning.\n2:add_end.\n3:get_length.\n4:remove_element.\n5:add_from_index.\n6:show_linkedlist.\n7insert_after_value."
+          "\n###########################")
     ll = Linkedlist()
-
-
+    ll.add_beginning(1)
+    ll.add_end(22)
+    ll.show_linkedlist()
+    ll.add_from_index(1, 55)
+    ll.show_linkedlist()
+    ll.insert_after_value(22, 44)
+    ll.show_linkedlist()
