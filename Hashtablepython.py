@@ -32,11 +32,11 @@ class HashTable:
             if element[0] == key and len(element) == 2:
                 del self.arr[a][ind]
 
+if __name__ == '__main__':
 
-aa = HashTable()
-aa.__setitem__("march 6", 22)
-aa.__setitem__("march 17", 455)
-# print(aa.__getitem__("march 6"))
-# aa.__delitem__("march 6")
-print(aa.arr)
-print(aa.__getitem__("march 6"))
+    aa = HashTable()
+    aa.__setitem__("march 6", 22)
+    aa.__setitem__("march 17", 455)
+
+    print(aa.arr)
+    print(aa.__getitem__("march 6"))
